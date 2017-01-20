@@ -1,6 +1,6 @@
 {
   "name": "lccl",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Customize your console log",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,7 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
+    "codacy-coverage": "^2.0.0",
     "codeclimate-test-reporter": "^0.4.0",
     "eslint": "^3.13.1",
     "eslint-config-standard": "^6.2.1",

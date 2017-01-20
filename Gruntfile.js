@@ -17,6 +17,15 @@ module.exports = function (grunt) {
             cwd: ''
           }
         }
+      },
+      codacy: {
+        command: [ 'cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage' ].join('&&'),
+        options: {
+          stderr: false,
+          execOptions: {
+            cwd: ''
+          }
+        }
       }
     }
   })
@@ -28,5 +37,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-shell')
   grunt.loadNpmTasks('grunt-mocha-istanbul')
 
-  grunt.registerTask('coverage', ['mocha_istanbul:coverage', 'shell:code_climate'])
+  grunt.registerTask('coverage', ['mocha_istanbul:coverage', 'shell:codacy', 'shell:code_climate'])
 }
