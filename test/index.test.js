@@ -20,6 +20,7 @@ describe('# Test : Simple Customiztion', function() {
     done()
   });
 });
+
 describe('# Test : Simple Customiztion and Date', function() {
   it('passed', function (done) {
     lcclSimpleDate.log('TEST LOG')
@@ -29,6 +30,7 @@ describe('# Test : Simple Customiztion and Date', function() {
     done()
   });
 });
+
 describe('# Test : Specific Customiztion', function() {
   it('passed', function (done) {
     lcclObject.log('TEST LOG')
@@ -38,6 +40,7 @@ describe('# Test : Specific Customiztion', function() {
     done()
   });
 });
+
 describe('# Test : Specific Customiztion and Date', function() {
   it('passed', function (done) {
     lcclObjectDate.log('TEST LOG')
