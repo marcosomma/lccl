@@ -1,6 +1,6 @@
 {
   "name": "lccl",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Customize your console log",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,14 @@
     "cuctomize",
     "log"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcosomma/lccl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marcosomma/lccl/issues"
+  },
+  "homepage": "http://marcosomma.github.io/lccl",
   "author": "Marco Somma <mak.so1979@gmail.com> (http://marcosomma.github.io/)",
   "license": "ISC",
   "devDependencies": {
