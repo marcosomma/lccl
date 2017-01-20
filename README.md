@@ -8,14 +8,16 @@
 [![npm version](https://badge.fury.io/js/lccl.svg)](http://badge.fury.io/js/lccl) [![](https://img.shields.io/badge/version-STABLE-brightgreen.svg)](https://www.npmjs.com/package/lccl) [![Codacy Badge](https://api.codacy.com/project/badge/grade/a2ee79ed96884b899115ae44106537f8)](https://www.codacy.com/app/makso1979/lccl) [![Code Climate](https://codeclimate.com/github/marcosomma/lccl/badges/gpa.svg)](https://codeclimate.com/github/marcosomma/lccl) [![Test Coverage](https://codeclimate.com/github/marcosomma/lccl/badges/coverage.svg)](https://codeclimate.com/github/marcosomma/lccl) [![CircleCI branch](https://img.shields.io/circleci/project/marcosomma/lccl/master.svg)](https://circleci.com/gh/marcosomma/lccl/tree/master)
 
 **Install**
+
 `npm install lccl `
 
 **Use**
+
 `const lcclSimple = require('../index')(<LOG Prefix>,<show date>)`
 
 **Samples**
 
-Single Prefix for all log methods
+- **Single Prefix for all log methods**
 ```javascript
 const lccl = require('../index')('TEXT UNIQUE FOR ALL OF THEM',false)
 
@@ -38,7 +40,7 @@ lccl.error('TEST ERROR') // 2017-01-20 at 09:27:14 >> [TEXT UNIQUE FOR ALL OF TH
 ```
 
 
-Specified Prefix for each log methods
+- **Specified Prefix for each log methods**
 ```javascript
 const lcclConfig = {
  info: 'TEXT SPECIFIC INFO',
