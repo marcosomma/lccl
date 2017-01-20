@@ -13,24 +13,24 @@
 
 **Use**
 
-`const lccl = require('lccl')(<LOG Prefix>,<show date>)`
+`const lccl = require('lccl')(<LOG Prefix>,<show date>,<show gray scale>)`
 
 **Samples**
 
 - **Single Prefix for all log methods**
 ```javascript
-const lcclUnique = require('lccl')('TEXT UNIQUE FOR ALL OF THEM',false)
-const lcclUniqueWithDate = require('lccl')('TEXT UNIQUE FOR ALL OF THEM',true)
+const lcclUnique = require('lccl')('TEXT UNIQUE FOR ALL OF THEM', false, true)
+const lcclUniqueWithDate = require('lccl')('TEXT UNIQUE FOR ALL OF THEM',true, true)
 
-lcclUnique.log('TEST LOG') // [TEXT UNIQUE FOR ALL OF THEM] TEST LOG
-lcclUnique.info('TEST INFO') // [TEXT UNIQUE FOR ALL OF THEM] TEST INFO
-lcclUnique.warn('TEST WARN') // [TEXT UNIQUE FOR ALL OF THEM] TEST WARN
-lcclUnique.error('TEST ERROR') // [TEXT UNIQUE FOR ALL OF THEM] TEST ERROR
+lcclUnique.log('TEST LOG') // # TEXT UNIQUE FOR ALL OF THEM # TEST LOG
+lcclUnique.info('TEST INFO') // # TEXT UNIQUE FOR ALL OF THEM # TEST INFO
+lcclUnique.warn('TEST WARN') // # TEXT UNIQUE FOR ALL OF THEM # TEST WARN
+lcclUnique.error('TEST ERROR') // # TEXT UNIQUE FOR ALL OF THEM # TEST ERROR
 
-lcclUniqueWithDate.log('TEST LOG') // 2017-01-20 at 09:27:14 >> [TEXT UNIQUE FOR ALL OF THEM] TEST LOG
-lcclUniqueWithDate.info('TEST INFO') // 2017-01-20 at 09:27:14 >> [TEXT UNIQUE FOR ALL OF THEM] TEST INFO
-lcclUniqueWithDate.warn('TEST WARN') // 2017-01-20 at 09:27:14 >> [TEXT UNIQUE FOR ALL OF THEM] TEST WARN
-lcclUniqueWithDate.error('TEST ERROR') // 2017-01-20 at 09:27:14 >> [TEXT UNIQUE FOR ALL OF THEM] TEST ERROR
+lcclUniqueWithDate.log('TEST LOG') // 2017-01-20 at 22:41:43 >> # TEXT SPECIFIC INFO # TEST LOG
+lcclUniqueWithDate.info('TEST INFO') // 2017-01-20 at 22:41:43 >> # TEXT SPECIFIC INFO # TEST INFO
+lcclUniqueWithDate.warn('TEST WARN') // 2017-01-20 at 22:41:43 >> # TEXT SPECIFIC INFO # TEST WARN
+lcclUniqueWithDate.error('TEST ERROR') // 2017-01-20 at 22:41:43 >> # TEXT SPECIFIC INFO # TEST ERROR
 
 ```
 
@@ -42,17 +42,17 @@ const lcclConfig = {
  warn: 'TEXT SPECIFIC WARNING',
  error: 'TEXT SPECIFIC ERROR'
 }
-const lcclSpecific = require('lccl')(lcclConfig, false)
-const lcclSpecificWithDate = require('lccl')(lcclConfig, true)
+const lcclSpecific = require('lccl')(lcclConfig, false, true)
+const lcclSpecificWithDate = require('lccl')(lcclConfig, true, true)
 
-lcclSpecific.log('TEST LOG') // [TEXT SPECIFIC INFO] TEST LOG
-lcclSpecific.info('TEST INFO') // [TEXT SPECIFIC INFO] TEST INFO
-lcclSpecific.warn('TEST WARN') // [TEXT SPECIFIC WARNING] TEST WARN
-lcclSpecific.error('TEST ERROR') // [TEXT SPECIFIC ERROR] TEST ERROR
+lcclSpecific.log('TEST LOG') // # TEXT SPECIFIC INFO # TEST LOG
+lcclSpecific.info('TEST INFO') // # TEXT SPECIFIC INFO # TEST INFO
+lcclSpecific.warn('TEST WARN') // # TEXT SPECIFIC WARNING # TEST WARN
+lcclSpecific.error('TEST ERROR') // # TEXT SPECIFIC ERROR # TEST ERROR
 
-lcclSpecificWithDate.log('TEST LOG') // 2017-01-20 at 09:27:14 >> [TEXT SPECIFIC INFO] TEST LOG
-lcclSpecificWithDate.info('TEST INFO') // 2017-01-20 at 09:27:14 >> [TEXT SPECIFIC INFO] TEST INFO
-lcclSpecificWithDate.warn('TEST WARN') // 2017-01-20 at 09:27:14 >> [TEXT SPECIFIC WARNING] TEST WARN
-lcclSpecificWithDate.error('TEST ERROR') // 2017-01-20 at 09:27:14 >> [TEXT SPECIFIC ERROR] TEST ERROR
+lcclSpecificWithDate.log('TEST LOG') // 2017-01-20 at 09:27:14 >> # TEXT SPECIFIC INFO # TEST LOG
+lcclSpecificWithDate.info('TEST INFO') // 2017-01-20 at 09:27:14 >> # TEXT SPECIFIC INFO # TEST INFO
+lcclSpecificWithDate.warn('TEST WARN') // 2017-01-20 at 09:27:14 >> # TEXT SPECIFIC WARNING # TEST WARN
+lcclSpecificWithDate.error('TEST ERROR') // 2017-01-20 at 09:27:14 >> # TEXT SPECIFIC ERROR # TEST ERROR
 
 ```

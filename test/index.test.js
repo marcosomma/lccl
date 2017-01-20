@@ -1,15 +1,15 @@
 const should = require('chai').should()
 
-const lcclSimple = require('../index')('TEXT UNIQUE FOR ALL OF THEM',false)
-const lcclSimpleDate = require('../index')('TEXT UNIQUE FOR ALL OF THEM',true)
+const lcclSimple = require('../index')('TEXT UNIQUE FOR ALL OF THEM', false, true)
+const lcclSimpleDate = require('../index')('TEXT UNIQUE FOR ALL OF THEM', true, false)
 
 const lcclConfig = {
   info: 'TEXT SPECIFIC INFO',
   warn: 'TEXT SPECIFIC WARNING',
   error: 'TEXT SPECIFIC ERROR'
 }
-const lcclObject = require('../index')(lcclConfig,false)
-const lcclObjectDate = require('../index')(lcclConfig,true)
+const lcclObject = require('../index')(lcclConfig, false, false)
+const lcclObjectDate = require('../index')(lcclConfig, true, true)
 
 describe('# Test : Simple Customiztion', function() {
   it('passed', function (done) {

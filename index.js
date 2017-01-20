@@ -1,3 +1,5 @@
+var myColors = require('colors')
+
 const createLogFn = (customArguments, method) => function () {
   console[method].apply(console, concatWithArguments(customArguments, arguments))
 }
@@ -6,21 +8,35 @@ const concatWithArguments = (customArguments, args) => {
   return customArguments.concat(Array.from(args))
 }
 
-const getCustomArguments = (date, logPrefix) => {
-  var customArguments = [`[${logPrefix}]`]
-  if (date) customArguments.unshift(getDate())
+const processCustomArguments = (date, logPrefix, colors) => {
+  var customArguments = [colors ? `# ${logPrefix} #`.white.bold : `# ${logPrefix} #`]
+  if (date && colors) customArguments.unshift(getDate().gray.bold.underline , '>>'.grey )
+  if (date && !colors) customArguments.unshift(getDate() , '>>' )
   return customArguments
 }
 
-const getDate = () => new Date().toISOString().replace(/T/, ' at ').replace(/\..+/, ' >>')
+const getCustomArguments = (unique, date, conf, colors) => {
+  return unique ?
+      processCustomArguments(date, conf, colors)
+    :
+      {
+        info : processCustomArguments(date, (unique ? conf : conf.info), colors),
+        warn : processCustomArguments(date, (unique ? conf : conf.warn), colors),
+        error : processCustomArguments(date, (unique ? conf : conf.error), colors)
+      }
+}
 
-const init = (conf, date) => {
+
+const getDate = () => new Date().toISOString().replace(/T/, ' at ').replace(/\..+/, '')
+
+const init = (conf, date, colors) => {
   var unique = typeof conf === 'string'
+  var customArgumrnts = getCustomArguments(unique, date, conf, colors)
   return {
-    log: createLogFn(getCustomArguments(date, (unique ? conf : conf.info)), 'log'),
-    info: createLogFn(getCustomArguments(date, (unique ? conf : conf.info)), 'info'),
-    warn: createLogFn(getCustomArguments(date, (unique ? conf : conf.warn)), 'warn'),
-    error: createLogFn(getCustomArguments(date, (unique ? conf : conf.error)), 'error')
+    log: createLogFn((unique ? customArgumrnts : customArgumrnts.info), 'log'),
+    info: createLogFn((unique ? customArgumrnts : customArgumrnts.info), 'info'),
+    warn: createLogFn((unique ? customArgumrnts : customArgumrnts.warn), 'warn'),
+    error: createLogFn((unique ? customArgumrnts : customArgumrnts.error), 'error')
   }
 }
 

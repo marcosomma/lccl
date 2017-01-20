@@ -1,6 +1,6 @@
 {
   "name": "lccl",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Customize your console log",
   "main": "index.js",
   "scripts": {
@@ -38,5 +38,8 @@
     "mocha": "^3.2.0",
     "mocha-lcov-reporter": "^1.2.0",
     "mocha-sinon": "^1.1.6"
+  },
+  "dependencies": {
+    "colors": "^1.1.2"
   }
 }
