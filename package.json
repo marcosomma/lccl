@@ -1,0 +1,34 @@
+{
+  "name": "lccl",
+  "version": "0.0.2",
+  "description": "Customize your console log",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt coverage",
+    "test_build": "grunt coverage_build"
+  },
+  "keywords": [
+    "custom",
+    "console.log",
+    "cuctomize",
+    "log"
+  ],
+  "author": "Marco Somma <mak.so1979@gmail.com> (http://marcosomma.github.io/)",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "codeclimate-test-reporter": "^0.4.0",
+    "eslint": "^3.13.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "grunt": "^1.0.1",
+    "grunt-istanbul-coverage": "^0.1.4",
+    "grunt-mocha-istanbul": "^5.0.2",
+    "grunt-shell": "^2.1.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "mocha-lcov-reporter": "^1.2.0",
+    "mocha-sinon": "^1.1.6"
+  }
+}
