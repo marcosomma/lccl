@@ -1,6 +1,6 @@
 {
   "name": "lccl",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Customize your console log",
   "main": "index.js",
   "scripts": {
