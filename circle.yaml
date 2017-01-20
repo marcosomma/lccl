@@ -1,0 +1,15 @@
+machine:
+  environment:
+    CODECLIMATE_REPO_TOKEN : 95d8e69c5404574986879a02b3595f30e1b53f0eeddd40cbb992810ff291e533
+
+dependencies:
+  pre:
+    - npm install -g codeclimate-test-reporter
+    - npm install -g mocha
+    - npm install -g chai
+    - npm install -g istanbul
+    - npm install -g grunt
+    - npm install -g grunt-cli
+    - npm install -g grunt-init
+    - npm install -g grunt-shell
+    - npm install -g grunt-mocha-istanbul
