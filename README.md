@@ -13,7 +13,7 @@
 
 **Use**
 
-`const lcclSimple = require('lccl')(<LOG Prefix>,<show date>)`
+`const lccl = require('lccl')(<LOG Prefix>,<show date>)`
 
 **Samples**
 
