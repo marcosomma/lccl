@@ -1,8 +1,6 @@
-var myColors = require('colors')
+require('colors')
 
-const createLogFn = (customArguments, method) => function () {
-  console[method].apply(console, concatWithArguments(customArguments, arguments))
-}
+const getDate = () => new Date().toISOString().replace(/T/, ' at ').replace(/\..+/, '')
 
 const concatWithArguments = (customArguments, args) => {
   return customArguments.concat(Array.from(args))
@@ -26,8 +24,10 @@ const getCustomArguments = (unique, date, conf, colors) => {
       }
 }
 
+const createLogFn = (customArguments, method) => function () {
+  console[method].apply(console, concatWithArguments(customArguments, arguments))
+}
 
-const getDate = () => new Date().toISOString().replace(/T/, ' at ').replace(/\..+/, '')
 
 const init = (conf, date, colors) => {
   var unique = typeof conf === 'string'
