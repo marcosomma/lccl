@@ -9,7 +9,7 @@ const lcclConfig = {
   error: 'TEST ERROR'
 }
 const lcclObject = require('../index')(lcclConfig,false)
-const lcclObjectDate = require('../index')(lcclConfig,false)
+const lcclObjectDate = require('../index')(lcclConfig,true)
 
 describe('# Test : Simple Customiztion', function() {
   it('passed', function (done) {
@@ -40,10 +40,10 @@ describe('# Test : Specific Customiztion', function() {
 });
 describe('# Test : Specific Customiztion and Date', function() {
   it('passed', function (done) {
-    lcclSimpleDate.log('test LOG')
-    lcclSimpleDate.info('test INFO')
-    lcclSimpleDate.warn('test WARN')
-    lcclSimpleDate.error('test ERROR')
+    lcclObjectDate.log('test LOG')
+    lcclObjectDate.info('test INFO')
+    lcclObjectDate.warn('test WARN')
+    lcclObjectDate.error('test ERROR')
     done()
   });
 });
