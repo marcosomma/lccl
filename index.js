@@ -1,8 +1,8 @@
-const createLoggerFn = (customArguments, method) => function () {
-  console[method].apply(console, concatToArguments(customArguments, arguments))
+const createLogFn = (customArguments, method) => function () {
+  console[method].apply(console, concatWithArguments(customArguments, arguments))
 }
 
-const concatToArguments = (customArguments, args) => {
+const concatWithArguments = (customArguments, args) => {
   return customArguments.concat(Array.from(args))
 }
 
@@ -17,10 +17,10 @@ const getDate = () => new Date().toISOString().replace(/T/, ' at ').replace(/\..
 const init = (conf, date) => {
   var unique = typeof conf === 'string'
   return {
-    log: createLoggerFn(getCustomArguments(date, (unique ? conf : conf.info)), 'log'),
-    info: createLoggerFn(getCustomArguments(date, (unique ? conf : conf.info)), 'info'),
-    warn: createLoggerFn(getCustomArguments(date, (unique ? conf : conf.warn)), 'warn'),
-    error: createLoggerFn(getCustomArguments(date, (unique ? conf : conf.error)), 'error')
+    log: createLogFn(getCustomArguments(date, (unique ? conf : conf.info)), 'log'),
+    info: createLogFn(getCustomArguments(date, (unique ? conf : conf.info)), 'info'),
+    warn: createLogFn(getCustomArguments(date, (unique ? conf : conf.warn)), 'warn'),
+    error: createLogFn(getCustomArguments(date, (unique ? conf : conf.error)), 'error')
   }
 }
 
