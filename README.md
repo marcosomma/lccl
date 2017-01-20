@@ -16,7 +16,7 @@
  **Samples**
 
  Single Prefix for all log methods
- ```
+ ```javascript
  const lccl = require('../index')('TEXT UNIQUE FOR ALL OF THEM',false)
 
  lccl.log('TEST LOG') // [TEXT UNIQUE FOR ALL OF THEM] TEST LOG
@@ -38,7 +38,7 @@
  ```
 
  specified Prefix for each log methods
- ```
+ ```javascript
  const lcclConfig = {
    info: 'TEXT SPECIFIC INFO',
    warn: 'TEXT SPECIFIC WARNING',
