@@ -30,7 +30,7 @@ lccl.error('TEST ERROR') // [TEXT UNIQUE FOR ALL OF THEM] TEST ERROR
 .
 .
 
-const lccl = require('../index')('TEXT UNIQUE FOR ALL OF THEM',false)
+const lccl = require('../index')('TEXT UNIQUE FOR ALL OF THEM',true)
 
 lccl.log('TEST LOG') // 2017-01-20 at 09:27:14 >> [TEXT UNIQUE FOR ALL OF THEM] TEST LOG
 lccl.info('TEST INFO') // 2017-01-20 at 09:27:14 >> [TEXT UNIQUE FOR ALL OF THEM] TEST INFO
@@ -58,7 +58,7 @@ lccl.error('TEST ERROR') // [TEXT SPECIFIC ERROR] TEST ERROR
 .
 .
 
-const lccl = require('../index')(lcclConfig, false)
+const lccl = require('../index')(lcclConfig, true)
 
 lccl.log('TEST LOG') // 2017-01-20 at 09:27:14 >> [TEXT SPECIFIC INFO] TEST LOG
 lccl.info('TEST INFO') // 2017-01-20 at 09:27:14 >> [TEXT SPECIFIC INFO] TEST INFO
